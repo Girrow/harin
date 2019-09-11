@@ -32,13 +32,32 @@
 					<li class="nav-item"><a class="nav-link" href="/board">Bulletin
 							Board</a></li>
 				</ul>
-				<button v-if="!loginSuccess" class="btn btn-outline-success my-2 my-sm-0"
-					type="button" v-on:click='clickLogin'>login</button>
-				<button v-else v-on:click="logout" class="btn btn-outline-success my-2 my-sm-0"
-					type="button">logout</button>
+				<button v-if="!loginSuccess"
+					class="btn btn-outline-success my-2 my-sm-0" type="button"
+					v-on:click='clickLogin'>login</button>
+				<button v-else v-on:click="logout"
+					class="btn btn-outline-success my-2 my-sm-0" type="button">logout</button>
 			</div>
 		</nav>
-		<div class="alert alert-primary" role="alert">메인화면</div>
+		<div class="alert alert-primary text-center" role="alert">게시판</div>
+		<table class="table text-center">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">No</th>
+					<th scope="col">Title</th>
+					<th scope="col">Writer</th>
+					<th scope="col">Created</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v->
+					<th scope="row">1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
