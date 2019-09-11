@@ -9,4 +9,8 @@ import me.girrow.harin.vo.PostVO;
 @Mapper
 public interface PostMapper {
 	public List<PostVO> selectAllData();
+	public PostVO selectOneData(String key);
+	public int create(PostVO pv);
+	public int update(PostVO pv);
+	public int delete(PostVO pv);
 }

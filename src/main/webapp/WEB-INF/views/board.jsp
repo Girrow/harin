@@ -40,6 +40,7 @@
 			</div>
 		</nav>
 		<div class="alert alert-primary text-center" role="alert">게시판</div>
+		<button v-on:click='goToNew' class="btn btn-warning">글쓰기1</button>
 		<table class="table text-center">
 			<thead class="thead-dark">
 				<tr>
@@ -50,18 +51,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr v->
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
+				<tr v-for="item in boardData"  @click="goToDetail(item.no)">
+					<th scope="row">{{item.no}}</th>
+					<td>{{item.title}}</td>
+					<td>{{item.writer}}</td>
+					<td>{{item.created}}</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="<c:url value="/resources/js/main.js"/>"></script>
+	<script src="<c:url value="/resources/js/board.js"/>"></script>
 </body>
 </html>

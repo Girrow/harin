@@ -6,6 +6,29 @@
 	<select id="selectAllData" resultType="PostVO">
 		SELECT *
 		  FROM `post`
-		 WHERE username=#{username} and password=#{password}
+		 WHERE delYn='N'
 	</select>
+	
+	<select id="selectOneData" resultType="PostVO">
+		SELECT *
+		  FROM `post`
+		 WHERE delYn='N' and no=#{key}
+	</select>
+	
+	<insert id="create" parameterType="PostVO">
+		INSERT INTO `post`(title,content,writer)
+		VALUES (#{title},#{content},#{writer})
+	</insert>
+	
+	<update id="update">
+		UPDATE `post`
+		SET title=#{title} , content =#{content}
+		 WHERE writer=#{writer} and no=#{no}
+	</update>
+	
+	<delete id="delete">
+		UPDATE `post`
+		SET delYn='Y'
+		 WHERE writer=#{writer} and no=#{no}
+	</delete>
 </mapper>
